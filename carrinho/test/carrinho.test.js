@@ -61,4 +61,14 @@ describe('Testes do carrinho', () => {
       total: 25
     });
   });
+
+  it('Deve calcular o valor total', () => {
+    const item = new Item('Café', 20, 1);
+
+    const carrinho = new Carrinho();
+    carrinho.adiciona(item);
+    carrinho.adicionaFrete(30)
+
+    expect(carrinho.calculaTotal()).toBe(50);
+  });
 });
